@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VoteUp</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	<% include partials/userNav.ejs %>
+	<div class="user-table">
+		<div class="myPolls-h1">
+			<h1>Your polls: </h1>
+		</div>
+		
+
+		<div class="polls-table">
+		<% if(data){ %>
+			<% for(let i=0; i<data.length; i++){ %>
+				<a class="myPolls-a" href='/view-poll/<%= data[i].question %>' > 
+					<span><%= data[i].question %></span>
+					<!-- total number of votes -->
+					<span>voters: <%= data[i].data.reduce((a, b) => a+b, 0) %></span>
+				</a>
+			<% } %>
+		<% }else{ %>
+			<h4>you have no polls for now, create a <a href="/new-poll">new Poll</a></h3>
+		<% } %>
+		
+		</div>
+	</div>
+	
+	
+	<% include partials/footer.ejs %>
+</body>
+</html>

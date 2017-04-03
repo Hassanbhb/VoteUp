@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VoteUp-polls</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	<% if(user){ %>
+		<% include partials/userNav.ejs %>
+	<% }else{ %>
+		<% include partials/nav.ejs %>
+	<% } %>
+	
+	
+	<div class="all-users-polls">
+	    <h1>All Users polls</h1>
+		<div class="polls-table">
+
+		<% for(let i=0; i<data.length; i++){ %>
+			<a href='/view-poll/<%= data[i].question %>' > 
+				<span><%= data[i].question %></span>
+				<!-- total number of votes -->
+				<span>voters: <%= data[i].data.reduce((a, b) => a+b, 0) %></span>
+			</a>
+		<% } %>
+		
+		</div>
+	</div>
+
+	<% include partials/footer.ejs %>
+
+</body>
+</html>

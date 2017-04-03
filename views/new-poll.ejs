@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VoteUp-polls</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	<% include partials/userNav.ejs %>
+
+	<div class="new-poll">
+		<h1>Create your poll.</h1>
+		<form id="form" method='POST' action="/new-poll/new">
+			<div class="inputs">
+				<label>Your question:</label><br>
+				<input class="question" type="text" name="question" placeholder="must have one question mark!" required><br>
+				<label>Options</label><br>
+				<input class= "option" type="text" name="options[1][option]" placeholder="option1" required>
+				<input class= "option" type="text" name="options[2][option]" placeholder="option2" required>
+			</div>
+			<input class="add" type="button" value="add button">
+			<input class="submit" type="submit" name="submit" value='Create chart'>
+		</form>
+		
+	</div>
+
+	<% include partials/footer.ejs %>
+</body>
+	<script type="text/javascript" src="/common/ajaxFunctions.js"></script>
+	<script type="text/javascript" src="/controllers/newChartController.client.js"></script>
+</html>

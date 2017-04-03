@@ -1,0 +1,460 @@
+/* home page css at line 86
+	polls page css at line 219
+	new poll css at line 292
+	view-poll css at line 343
+	login page css at line 265
+	my polls page css at line 401
+	footer css at line 202
+*/	
+
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+}
+/********* navigation bar css *********/
+header{
+	border-bottom: 1px black solid;
+	background-color: lightslategrey;
+	/****check polls css *****/
+	height: 118px;
+}
+
+nav>ul{
+	width: 100%;
+	display: flex;
+	padding: 0;
+}
+
+nav>ul>li:first-child{
+	flex-grow: 7;
+	justify-content: flex-start;
+	padding: 30px;
+}
+
+nav>ul>li:first-child:hover{
+	border-bottom: none;
+}
+
+nav>ul>li{
+	list-style-type: none;
+	flex: 1;
+	text-align: center;
+  	display: flex;
+  	justify-content: center;
+    align-items: center;
+}
+nav>ul>li:hover{
+	border-bottom: 3px solid wheat;
+}
+
+.logo-text{
+	font-size: 50px;
+}
+
+.logo{
+	width: 50px;
+}
+
+ul>li>a{
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: whitesmoke;
+	display: block;
+}
+
+@media all and (max-width: 500px){
+	header{
+		height: 81px;
+	}
+	nav>ul>li:first-child{
+		flex-grow: 1;
+	}
+	.logo-text{
+		font-size: 20px;
+	}
+	.logo{
+		width: 20px
+	}
+	ul>li>a{
+		font-size: 15px;
+	}
+}
+/*******************Home page ***************/
+/*********** first part ************/
+.container{
+	display: flex;
+	flex-direction: column;
+}
+
+.first{
+	text-align: center;
+	background-image: url(/img/smile.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 500px;  
+	padding-top: 20px;
+}
+
+
+.first>p:first-child{
+	font-size: 60px;
+}
+
+
+.first>p {
+	font-size: 30px;
+	color: white;
+	margin: 30px 0;
+}
+
+.first img{
+	width: 200px;
+}
+
+.first a{
+	font-size: 30px;
+	background-color: rgba(179, 179, 45, 0.84);
+	border-radius: 12px;
+	padding: 10px;
+	text-decoration: none;
+}
+
+
+/********* second part ******/
+.second{
+	text-align: center;
+	display: flex;
+	margin-top: 30px;
+	padding-bottom: 50px;
+	height: 360px;
+	border-bottom: 1px solid lightgrey;
+}
+
+.second>p{
+	font-size: 50px;
+	flex: 1;
+	padding-left: 40px;
+	margin-top: 100px;
+}
+
+.second>img{
+	height: 360px;
+	flex: 1;
+	padding-right: 35px;
+}
+
+@media all and (max-width: 500px){
+	.second{
+		flex-direction: column;
+		height: 241px;
+	}
+	.second>img{
+		height: 147px;
+		width: 295px;
+		padding-right: 0;
+		padding-left: 13%;
+	}
+	.second>p{
+		font-size: 30px;
+		margin-top: 8px;
+		padding: 0 35px;
+	}
+}
+
+/********** third div ***********/
+
+.third{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	height: 230px;
+}
+
+.third>p{
+	font-size: 50px;
+	flex: 1;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 50px;
+}
+
+.imgs>img{
+	width: 100px;
+}
+
+@media all and (max-width: 500px){
+	.third{
+		height: 200px;
+	}
+	.third>p{
+		font-size: 25px;
+		padding-top: 40px;
+	}
+	.imgs>img{
+		width: 80px;
+	}
+}
+
+/*********** footer ***********/
+
+.footer{
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 20px;
+	background-color: lightslategrey;
+	color: aliceblue;
+}
+
+.footer>p{
+	margin: 0;
+}
+
+
+/*********** polls page ************/
+
+.all-users-polls{
+	text-align: center;
+	min-height: calc(100vh - 118px);
+}
+
+h1{
+	font-size: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.polls-table{
+	display: flex;
+	flex-direction: column;
+}
+
+.polls-table>a{
+	color: black;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 0 200px;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+}
+
+.polls-table>a>span:first-child{
+	font-size: 25px;
+}
+
+.polls-table>a>span{
+	font-size: 15px;
+	margin-top: 10px;
+}
+
+@media all and (max-width: 500px){
+	h1{
+		font-size: 25px;
+	}
+	.polls-table>a{
+		margin: 0 50px;
+	}
+}
+
+
+/******** login styling ********/
+
+.login{
+	text-align: center;
+	min-height: calc(100vh - 118px);
+	margin-top: 40px;
+}
+
+.btn{
+	color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+	margin-top: 20px;
+	text-decoration: none;
+}
+
+.btn > img {
+    width: 40px;
+    height: 40px;
+}
+
+.btn>p{
+	margin-top: 5px;
+	padding-left: 20px; 
+}
+
+/************* new-poll page style **************/
+
+.new-poll{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 118px);
+}
+
+label{
+	font-size: 25px;
+}
+
+input{
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 9px;
+}
+
+.question{
+	width: 500px;
+	margin-left: 30px;
+}
+
+.option{
+	width: 200px;
+	border: 1px solid black;
+	margin-left: 10px;
+}
+
+.add{
+	width: 150px;
+	align-self: center;
+	background-color: rgba(251, 222, 91, 0.43);
+	padding: 15px;
+}
+
+.submit{
+	width: 150px;
+	align-self: center;
+	background-color: rgba(251, 222, 91, 0.43);
+	padding: 15px;
+}
+
+@media all and (max-width: 500px){
+	.question{
+		margin-left: 10px;
+		width: 280px
+	}
+	.option{
+		margin-left: 10px;
+		width: 150px;
+	}
+}
+
+
+/********* view - poll css **********/
+
+.title{
+	margin-top: 40px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 50px;
+}
+
+.title > span{
+	font-size: 14px;
+	color: darkgrey;
+}
+
+.viewpoll{
+	display: flex;
+	flex-direction: row;
+}
+
+.options{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin-left: 20px;
+}
+
+button{
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 5px;
+	background-color: rgba(172, 211, 249, 0.42);
+}
+
+button:hover{
+	background-color: rgba(172, 211, 249, 1);
+}
+
+.delete{
+	background-color: #e60505;
+	color: white;
+	font-size: 15px;
+}
+
+.chart{
+	flex: 2;
+	justify-content: flex-end;
+}
+
+canvas{
+	 width: 500px; 
+	 height: 500px;
+	 float: right;
+}
+
+.addthis_inline_share_toolbox{
+	text-align: center;
+}
+
+@media all and (max-width: 500px){
+	.title{
+		margin-top: 40px;
+		margin-bottom: 20px;
+		text-align: center;
+		font-size: 30px;
+	}
+	.viewpoll{
+		flex-direction: column;
+	}
+	.options>button{
+		border: 1px solid black;
+		border-radius: 10px;
+		padding: 10px;
+		margin: 5px;
+		width: 200px;
+		align-self: center;
+		background-color: rgba(172, 211, 249, 0.42);
+	}
+	canvas{
+		width: 350px; 
+	 	height: 350px;
+	}
+	.options{
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		margin-left: 0;
+	}
+}
+
+/*********** my polls css *************/
+
+.user-table{
+	min-height: calc(100vh - 118px);
+}
+
+.myPolls-h1{
+	text-align: center;
+}
+
+.myPolls-a{
+	text-align: center;
+	text-decoration: none;
+}

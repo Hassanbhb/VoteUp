@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VoteUp-login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	<% include partials/nav.ejs %>
+
+	<div class="login">
+		<a class="btn" href="/auth/google">
+			
+			<img src="/img/Google-plus-icon.png">
+			<p>Login With Google+</p>
+			
+		</a>
+		<a class="btn" href="auth/github">
+			
+			<img src="/img/githublogo.png">
+			<p>Login With Github</p>
+			
+		</a>
+		<a class="btn" href="/auth/facebook">
+			
+			<img src="/img/fbicon.png">
+			<p>Login With Facebook</p>
+			
+		</a>
+		<a class="btn" href="/auth/twitter">
+			
+			<img src="/img/tweetericon.jpg">
+			<p>Login With tweeter</p>
+			
+		</a>
+	</div>
+
+	<% include partials/footer.ejs %>
+</body>
+</html>
