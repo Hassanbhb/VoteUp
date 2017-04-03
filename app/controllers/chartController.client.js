@@ -8,7 +8,7 @@ if (deleteButton) {
 		const apiurl = window.location.href;
 
 		ajaxFunctions.ajaxRequest('DELETE', apiurl, function(info){
-			window.location.replace('http://localhost:8080/user-polls');
+			window.location.replace('https://voteupp.herokuapp.com/user-polls');
 		})
 	})
 
@@ -33,12 +33,12 @@ for (var i = 0; i < buttons.length; i++) {
 						location.reload();
 					}else{
 						alert("you have already voted on this chart");
-						window.location.replace('http://localhost:8080/polls');
+						window.location.replace('https://voteupp.herokuapp.com/polls');
 					}
 				}
 			//if it produces an error catch it and redirect visitoe to login page
 			}catch(error){
-				window.location.replace('http://localhost:8080/login');
+				window.location.replace('https://voteupp.herokuapp.com/login');
 			}
 		});
 	})
