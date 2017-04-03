@@ -216,6 +216,10 @@ ul>li>a{
 	margin: 0;
 }
 
+.footer>a>img{
+	width: 50px;
+}
+
 
 /*********** polls page ************/
 
