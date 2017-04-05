@@ -96,26 +96,33 @@ function chartHandler(){
 
 	this.createNewChart = function(req, res){
 		
-		//create arrays to save in the document
-		let labelsArr = [];
-		let dataArr = [];
-		for (var i = 0; i < req.body.options.length; i++) {
-			labelsArr.push(req.body.options[i]["option"]);
-			dataArr.push(0);
+		if (req.body.question.indexOf('?') !== -1) {
+			//create arrays to save in the document
+			let labelsArr = [];
+			let dataArr = [];
+			for (var i = 0; i < req.body.options.length; i++) {
+				labelsArr.push(req.body.options[i]["option"]);
+				dataArr.push(0);
+			}
+			
+			const NewChart = new Charts({
+				question: req.body.question,
+				labels: labelsArr,
+				data: dataArr,
+				creator: functions.userName(req.user)
+			});
+
+			//save doc then redirect to doc page
+			NewChart.save(function(err, data){
+				if (err) {return console.log(err)};
+				res.redirect('/view-poll/'+req.body.question);
+			});
+		}else{
+			res.send({
+						"error": "sorry, your question must have just one question mark."
+					});
 		}
 		
-		const NewChart = new Charts({
-			question: req.body.question,
-			labels: labelsArr,
-			data: dataArr,
-			creator: functions.userName(req.user)
-		});
-
-		//save doc then redirect to doc page
-		NewChart.save(function(err, data){
-			if (err) {return console.log(err)};
-			res.redirect('/view-poll/'+req.body.question);
-		});
 	}
 
 	this.deleteChart = function(req, res){
