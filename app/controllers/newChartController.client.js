@@ -17,6 +17,7 @@ function createNewInput(){
 		newInput.type = "text";
 		newInput.name = "options["+(count+=1)+"][option]";
 		newInput.placeholder = "New Option";
+		newInput.required = true;
 		document.querySelector('.inputs').appendChild(newInput);
 	}else{
 		alert('maximum is 8 options');
