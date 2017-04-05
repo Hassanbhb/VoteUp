@@ -95,8 +95,9 @@ function chartHandler(){
 	};
 
 	this.createNewChart = function(req, res){
+		const qu = req.body.question.trim(); 
 		
-		if (req.body.question.indexOf('?') !== -1) {
+		if (qu.indexOf('?') !== -1) {
 			//create arrays to save in the document
 			let labelsArr = [];
 			let dataArr = [];
@@ -106,7 +107,7 @@ function chartHandler(){
 			}
 			
 			const NewChart = new Charts({
-				question: req.body.question,
+				question: qu,
 				labels: labelsArr,
 				data: dataArr,
 				creator: functions.userName(req.user)
@@ -115,7 +116,7 @@ function chartHandler(){
 			//save doc then redirect to doc page
 			NewChart.save(function(err, data){
 				if (err) {return console.log(err)};
-				res.redirect('/view-poll/'+req.body.question);
+				res.redirect('/view-poll/'+ qu);
 			});
 		}else{
 			res.send({
